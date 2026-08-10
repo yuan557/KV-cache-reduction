@@ -1,0 +1,19 @@
+model:
+  name: Qwen/Qwen3-0.6B
+  dtype: float16
+  device: cuda
+
+eval:
+  datasets:
+    - wikitext-2
+  sequence_lengths:
+    - 512
+    - 1024
+    - 2048
+  batch_size: 1
+
+profiling:
+  num_calibration: 256
+
+strategies:
+  - baseline
